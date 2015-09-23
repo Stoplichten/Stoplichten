@@ -1,0 +1,6 @@
+C:\Users\Simon\Dropbox\Simon Antonides (AO2013)\Jaar 3 - Year 3\Periode 1\Project Stoplichten\Stoplichten\StoplichtenXNA\Stoplichten\Stoplichten\Stoplichten\bin\x86\Debug\Stoplichten.exe
+C:\Users\Simon\Dropbox\Simon Antonides (AO2013)\Jaar 3 - Year 3\Periode 1\Project Stoplichten\Stoplichten\StoplichtenXNA\Stoplichten\Stoplichten\Stoplichten\bin\x86\Debug\Stoplichten.pdb
+C:\Users\Simon\Dropbox\Simon Antonides (AO2013)\Jaar 3 - Year 3\Periode 1\Project Stoplichten\Stoplichten\StoplichtenXNA\Stoplichten\Stoplichten\Stoplichten\obj\x86\Debug\Stoplichten.csprojResolveAssemblyReference.cache
+C:\Users\Simon\Dropbox\Simon Antonides (AO2013)\Jaar 3 - Year 3\Periode 1\Project Stoplichten\Stoplichten\StoplichtenXNA\Stoplichten\Stoplichten\Stoplichten\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Simon\Dropbox\Simon Antonides (AO2013)\Jaar 3 - Year 3\Periode 1\Project Stoplichten\Stoplichten\StoplichtenXNA\Stoplichten\Stoplichten\Stoplichten\obj\x86\Debug\Stoplichten.exe
+C:\Users\Simon\Dropbox\Simon Antonides (AO2013)\Jaar 3 - Year 3\Periode 1\Project Stoplichten\Stoplichten\StoplichtenXNA\Stoplichten\Stoplichten\Stoplichten\obj\x86\Debug\Stoplichten.pdb
