@@ -12,29 +12,30 @@ namespace Stoplichten
     // 3 is left
 
     
-    class Road
+    class Road : GameObject
     {
-        int[] RInfo;
-        Rectangle RRect;
         Texture2D RTexture;
 
-        public Road(int[] RInfo, GraphicsDevice g) {
-            this.RInfo = RInfo;
-            RRect = new Rectangle(RInfo[4], RInfo[5], RInfo[6], RInfo[7]);
+        public Road(Rectangle rectangle, GraphicsDevice g, Color color)
+            : base(rectangle, color)
+        {
             RTexture = new Texture2D(g, 1, 1);
-
             RTexture.SetData(new[] { Color.White });
+            this.rectangle = rectangle;
+            this.color = color;
+            this.texture = RTexture;
+            this.currentRotation = 0f;
         }
         public void Update(GameTime gameTime)
         {
             return;
         }
 
-        public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
+       /* public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(RTexture,RRect,Color.Blue);
+            spriteBatch.Draw(RTexture, base.rectangle, base.color);
 
-        }
+        }*/
 
 
     }

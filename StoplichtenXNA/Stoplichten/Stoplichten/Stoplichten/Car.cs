@@ -7,36 +7,52 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Stoplichten
 {
-    class Car
+    class Car : GameObject
     {
-        int[] CInfo;
-        Rectangle CRect;
         Texture2D CTexture;
+        Rectangle CRectangle;
 
 
-
-
-        public Car(int[] CInfo, GraphicsDevice g) {
-            this.CInfo = CInfo;
-            CRect = new Rectangle(CInfo[4], CInfo[5], CInfo[6], CInfo[7]);
+        public Car(Rectangle rectangle, GraphicsDevice g, Color color) : base(rectangle, color) {
             CTexture = new Texture2D(g, 1, 1);
 
-            CTexture.SetData(new[] { Color.White });
+            CTexture.SetData(new[] { color });
+            this.rectangle = rectangle;
+            this.color = color;
+            this.texture = CTexture;
+            CRectangle = this.rectangle;
+            this.currentRotation = 0f;
 
 
         }
         public void Update(GameTime gameTime)
         {
+            //Console.WriteLine(gameTime.ElapsedGameTime.Milliseconds);
             
-            CRect.Y += 1 * gameTime.ElapsedGameTime.Milliseconds;
-            return;
+          //  CRectangle.Y += (int)(0.2f * gameTime.ElapsedGameTime.Milliseconds);
+
+
+
+
+            if (this.rectangle.Y >= 50)
+            {
+                this.Right(gameTime);
+            }
+            else
+            {
+                this.Down(gameTime);
+            }
+
+            
+
+         //   base.rectangle = CRectangle;
         }
 
-        public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
+     /*   public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(CTexture,CRect,Color.Red);
+            spriteBatch.Draw(CTexture, base.rectangle, base.color);
 
         
-        }
+        }*/
     }
 }

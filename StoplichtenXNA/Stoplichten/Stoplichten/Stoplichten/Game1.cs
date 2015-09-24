@@ -28,6 +28,9 @@ namespace Stoplichten
 
         Intersection I;
 
+        List<GameObject> objects;
+        Controller controller;
+
 
         public Game1()
         {
@@ -57,6 +60,15 @@ namespace Stoplichten
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+
+            objects = new List<GameObject>();
+
+
+            //Method of adding Objects to the list that goes to the controller
+            //objects.Add(new ClassName());
+
+            controller = new Controller(objects);
+
             // TODO: use this.Content to load your game content here
             R = new List<Road>(8);
             // LEGEND:
@@ -85,23 +97,23 @@ namespace Stoplichten
             C = new List<Car>(1);
             CInfo = new int[1][]
             {
-                new int[8] {2, 0,0,0, 40, 0,  10, 10 },    // 0 <> 4
-            //    new int[8] {1, 1,2,3, 60, 40, 40, 10 },    // 1 <> 5
+                new int[8] {2, 0,0,0, 40, 0,  10, 10 } //First car
+            //    new int[8] {1, 1,2,3, 60, 40, 40, 10 },   
             };
 
             for (int i = 0; i < RInfo.GetLength(0); i++){
-                R.Add(new Road(RInfo[i],GraphicsDevice));
+                R.Add(new Road(new Rectangle(RInfo[i][4], RInfo[i][5], RInfo[i][6], RInfo[i][7]), GraphicsDevice, Color.White));
             }
 
             for (int i = 0; i < CInfo.GetLength(0); i++)
             {
-                C.Add(new Car(CInfo[i], GraphicsDevice));
+                C.Add(new Car(new Rectangle(CInfo[i][4], CInfo[i][5], CInfo[i][6], CInfo[i][7]), GraphicsDevice, Color.Red));
             }
 
 
             //TODO: put roads in intersection
             //Roads are put in on numerical order
-            I = new Intersection(R);
+           // I = new Intersection(R);
 
 
         }
@@ -139,6 +151,19 @@ namespace Stoplichten
                 C[i].Update(gameTime);
             }
 
+
+            List<GameObject> test = controller.checkCollision(C[0]);
+
+            if (test != null)
+            {
+                
+             //   if (lastDirection != null) { lastDirection.color = Color.Orange; }
+             //   a = r.Next(test.Count);
+             //   ball.angle = MathHelper.ToDegrees((float)Math.Atan2((test[a].rectangle.Y + (test[a].rectangle.Height / 2)) - (ball.rectangle.Y + (ball.rectangle.Height / 2)), (test[a].rectangle.X + (test[a].rectangle.Width / 2)) - (ball.rectangle.X + (ball.rectangle.Width / 2))));
+             //   test[a].color = Color.White;
+              //  lastDirection = (Block)test[a];
+            }
+
             base.Update(gameTime);
         }
 
@@ -154,11 +179,11 @@ namespace Stoplichten
             spriteBatch.Begin();
             for (int i = 0; i < RInfo.GetLength(0); i++)
             {
-                R[i].Draw(spriteBatch, gameTime);
+                R[i].Draw(spriteBatch);
             }
             for (int i = 0; i < CInfo.GetLength(0); i++)
             {
-                C[i].Draw(spriteBatch, gameTime);
+                C[i].Draw(spriteBatch);
             }
 
 

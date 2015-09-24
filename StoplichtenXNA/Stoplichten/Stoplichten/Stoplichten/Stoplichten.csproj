@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="Car.cs" />
     <Compile Include="Controller.cs" />
+    <Compile Include="GameObject.cs" />
     <Compile Include="Intersection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
