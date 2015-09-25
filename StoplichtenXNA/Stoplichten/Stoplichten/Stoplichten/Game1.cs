@@ -20,11 +20,9 @@ namespace Stoplichten
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        List<Road> R;
-        int[][] RInfo;
+        Roads R;
 
-        List<Car> C;
-        int[][] CInfo;
+        Cars C;
 
         Intersection I;
 
@@ -70,46 +68,10 @@ namespace Stoplichten
             controller = new Controller(objects);
 
             // TODO: use this.Content to load your game content here
-            R = new List<Road>(8);
-            // LEGEND:
-            // North = 0
-            // East  = 1
-            // South = 2
-            // West  = 3
 
-            //Directions, intersection options (3 times), rect x, rect y, rect height, rect width
+            C = new Cars(GraphicsDevice);
 
-            //TODO: add formulas
-            RInfo =  new int[8][]
-            {
-                new int[8] {0, 1,2,3, 40, 0,  10, 40 },    // 0 <> 4
-                new int[8] {1, 1,2,3, 60, 40, 40, 10 },    // 1 <> 5
-                new int[8] {2, 1,2,3, 50, 60, 10, 40 },    // 2 <> 6
-                new int[8] {3, 1,2,3, 0,  50, 40, 10 },    // 3 <> 7
-                //No traffic lights
-                new int[8] {0, 0,0,0, 50, 0,  10, 40 },    // 4 <> 0
-                new int[8] {1, 0,0,0, 60, 50, 40, 10 },    // 5 <> 1
-                new int[8] {2, 0,0,0, 40, 60, 10, 40 },    // 6 <> 2
-                new int[8] {3, 0,0,0, 0,  40, 40, 10 },    // 7 <> 3
-            };
-
-
-            C = new List<Car>(1);
-            CInfo = new int[1][]
-            {
-                new int[8] {2, 0,0,0, 40, 0,  10, 10 } //First car
-            //    new int[8] {1, 1,2,3, 60, 40, 40, 10 },   
-            };
-
-            for (int i = 0; i < RInfo.GetLength(0); i++){
-                R.Add(new Road(new Rectangle(RInfo[i][4], RInfo[i][5], RInfo[i][6], RInfo[i][7]), GraphicsDevice, Color.White));
-            }
-
-            for (int i = 0; i < CInfo.GetLength(0); i++)
-            {
-                C.Add(new Car(new Rectangle(CInfo[i][4], CInfo[i][5], CInfo[i][6], CInfo[i][7]), GraphicsDevice, Color.Red));
-            }
-
+            R = new Roads(GraphicsDevice);
 
             //TODO: put roads in intersection
             //Roads are put in on numerical order
@@ -140,19 +102,12 @@ namespace Stoplichten
 
             // TODO: Add your update logic here
 
+            R.Update(gameTime);
 
-            for (int i = 0; i < RInfo.GetLength(0); i++)
-            {
-                R[i].Update(gameTime);
-            }
-
-            for (int i = 0; i < CInfo.GetLength(0); i++)
-            {
-                C[i].Update(gameTime);
-            }
+            C.Update(gameTime);
 
 
-            List<GameObject> test = controller.checkCollision(C[0]);
+           /*List<GameObject> test = controller.checkCollision(C[0]);
 
             if (test != null)
             {
@@ -162,7 +117,7 @@ namespace Stoplichten
              //   ball.angle = MathHelper.ToDegrees((float)Math.Atan2((test[a].rectangle.Y + (test[a].rectangle.Height / 2)) - (ball.rectangle.Y + (ball.rectangle.Height / 2)), (test[a].rectangle.X + (test[a].rectangle.Width / 2)) - (ball.rectangle.X + (ball.rectangle.Width / 2))));
              //   test[a].color = Color.White;
               //  lastDirection = (Block)test[a];
-            }
+            }*/
 
             base.Update(gameTime);
         }
@@ -177,15 +132,9 @@ namespace Stoplichten
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
-            for (int i = 0; i < RInfo.GetLength(0); i++)
-            {
-                R[i].Draw(spriteBatch);
-            }
-            for (int i = 0; i < CInfo.GetLength(0); i++)
-            {
-                C[i].Draw(spriteBatch);
-            }
 
+            R.Draw(spriteBatch);
+            C.Draw(spriteBatch);
 
 
             spriteBatch.End();

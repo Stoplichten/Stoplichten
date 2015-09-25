@@ -8,10 +8,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Simon\Dropbox\Simon Antonides (AO2013)\Jaar 3 - Year 3\Periode 1\Project Stoplichten\Stoplichten\StoplichtenXNA\Stoplichten\Stoplichten\StoplichtenContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Simon\Dropbox\Simon Antonides (AO2013)\Jaar 3 - Year 3\Periode 1\Project Stoplichten\Stoplichten\StoplichtenXNA\Stoplichten\Stoplichten\Stoplichten\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Simon\Dropbox\Simon Antonides (AO2013)\Jaar 3 - Year 3\Periode 1\Project Stoplichten\Stoplichten\StoplichtenXNA\Stoplichten\Stoplichten\Stoplichten\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Simon\Dropbox\Simon Antonides (AO2013)\Jaar 3 - Year 3\Periode 1\Project Stoplichten\Stoplichten\StoplichtenXNA\Stoplichten\Stoplichten\Stoplichten\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Simon\Dropbox\Simon Antonides (AO2013)\Jaar 3 - Year 3\Periode 1\Project Stoplichten\Stoplichten\Stoplichten\StoplichtenXNA\Stoplichten\Stoplichten\StoplichtenContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Simon\Dropbox\Simon Antonides (AO2013)\Jaar 3 - Year 3\Periode 1\Project Stoplichten\Stoplichten\Stoplichten\StoplichtenXNA\Stoplichten\Stoplichten\Stoplichten\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Simon\Dropbox\Simon Antonides (AO2013)\Jaar 3 - Year 3\Periode 1\Project Stoplichten\Stoplichten\Stoplichten\StoplichtenXNA\Stoplichten\Stoplichten\Stoplichten\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Simon\Dropbox\Simon Antonides (AO2013)\Jaar 3 - Year 3\Periode 1\Project Stoplichten\Stoplichten\Stoplichten\StoplichtenXNA\Stoplichten\Stoplichten\Stoplichten\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
